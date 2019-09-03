@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dutcha</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Dutcha</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Log In', new_user_session_path%></li>
+          <li><a href="/">Create Groups</a></li>
+          <li><%= link_to 'Log Out', destroy_user_session_path %></li>
+        </ul>
+        <ul id="slide-out" class="sidenav">
+          <li>
+            <%= link_to new_user_registration_path do%>
+              <i class="material-icons">assignment_ind</i>
+              Sign Up
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do%>
+              <i class="material-icons">input</i>
+              Log In
+            <% end %>
+          </li>
+           <li>
+            <%= link_to new_user_session_path do%>
+              <i class="material-icons">input</i>
+              Log Out
+            <% end %>
+            </li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Subheader</a></li>
+          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
